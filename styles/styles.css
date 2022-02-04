@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background-image: url("../images/fondoMain.jpg");
+  background-color: black;
+  background-size: cover;
+}
+
+#my-canvas {
+  background-color: darkgray;
+}
+
+#start-btn, #replay-btn {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 5px; 
+  flex: center;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#my-canvas, #gameover-screen {
+  display: none;
+}
+
+#my-canvas, #start-screen {
+    /* display: none; */
+}
