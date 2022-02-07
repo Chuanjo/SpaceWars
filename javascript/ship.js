@@ -32,9 +32,6 @@ class Ship {
             // this.speedY = -3
         } 
     }
-
     
-
-
 
 }
