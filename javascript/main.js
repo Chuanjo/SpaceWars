@@ -11,7 +11,9 @@ let newGame
 
 const startGame = () => {
     startScreen.style.display = "none"
+    gameOverScreen.style.display = "none"
     canvas.style.display = "flex"
+    
     newGame = new Game()
     newGame.gameLoop()
 }
@@ -26,3 +28,6 @@ startButton.addEventListener("click", startGame)
 document.addEventListener( "keydown",( event) =>{
     newGame.ship.movShip(event)
 } )
+
+let playAgainButton = document.querySelector("#replay-btn")
+playAgainButton.addEventListener("click", startGame)
