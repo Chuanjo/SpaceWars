@@ -6,8 +6,6 @@ class Game{
         this.enemyArr = [new Enemy()]
         this.enemyDist = 150
         this.enemy = new Enemy()
-        // this.shootArr = [new Shoot()]
-        // this.shoot = new Shoot()
         this.isGameOn = true
     }
 
@@ -47,6 +45,8 @@ class Game{
             shootParam.y < eachEnemy.y + eachEnemy.height &&
             shootParam.height + shootParam.y > eachEnemy.y) {
                 this.enemyArr.splice(indexEnemy, 1)
+                const indexShoot = this.ship.shootArr.indexOf(shootParam)
+                this.ship.shootArr.splice(indexShoot, 1)
             }
     }
 
