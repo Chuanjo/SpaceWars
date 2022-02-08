@@ -6,11 +6,18 @@ class Game{
         this.enemyArr = [new Enemy()]
         this.enemyDist = 150
         this.enemy = new Enemy()
+        // this.shootArr = [new Shoot()]
+        // this.shoot = new Shoot()
+        this.isGameOn = true
     }
 
     drawBackground = () => {
         ctx.drawImage(this.bg,0,0,canvas.width,canvas.height)
         
+    }
+
+    cleanCanvas = () => {
+        ctx.clearRect(this.bg,0,0,canvas.width,canvas.height)
     }
 
     spawnEnemy = () => {
@@ -34,11 +41,15 @@ class Game{
             }
     }
 
-    cleanCanvas = () => {
-        ctx.clearRect(this.bg,0,0,canvas.width,canvas.height)
+    checkSootEnemyCollision = (eachEnemy, shootParam, indexEnemy) => {
+        if (shootParam.x < eachEnemy.x + eachEnemy.width &&
+            shootParam.x + shootParam.width > eachEnemy.x &&
+            shootParam.y < eachEnemy.y + eachEnemy.height &&
+            shootParam.height + shootParam.y > eachEnemy.y) {
+                this.enemyArr.splice(indexEnemy, 1)
+            }
     }
 
-    //metodos
     gameLoop = () => {
         // Limpiar canvas
         this.cleanCanvas()
@@ -49,20 +60,39 @@ class Game{
         })
 
         this.spawnEnemy()
-        this.enemyArr.forEach((eachEnemy) => {
+        this.enemyArr.forEach((eachEnemy, indexEnemy) => {
             this.checkShipEnemyCollision(eachEnemy)
+            this.ship.shootArr.forEach((shootParam) => {
+                this.checkSootEnemyCollision(eachEnemy,shootParam, indexEnemy)
+            })
+        })
+
+        this.ship.shootArr.forEach( (eachShoot) => {
+            eachShoot.shootMov()
         })
         
         // dibujar elementos
+
+
         this.drawBackground()
+
         this.ship.drawShip()
+
+        this.ship.shootArr.forEach( (eachShoot) => {
+            eachShoot.drawShoot()
+        })
+
         this.enemyArr.forEach( (eachEnemy) => {
             eachEnemy.drawEnemy()
         })
         
+        
         // recursion animacion
 
-        requestAnimationFrame(this.gameLoop)        
+        if (this.isGameOn === true) {
+            requestAnimationFrame(this.gameLoop)
+        }
+               
     }
 
 }

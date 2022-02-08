@@ -25,9 +25,13 @@ const startGame = () => {
 let startButton = document.querySelector("#start-btn") 
 startButton.addEventListener("click", startGame)
 
-document.addEventListener( "keydown",( event) =>{
-    newGame.ship.movShip(event)
-} )
-
 let playAgainButton = document.querySelector("#replay-btn")
 playAgainButton.addEventListener("click", startGame)
+
+document.addEventListener("keydown",(event) => {
+    newGame.ship.movShip(event)
+    newGame.ship.shoot(event)
+    
+} )
+
+

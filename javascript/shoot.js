@@ -1,15 +1,19 @@
 class Shoot {
-    contructor() {
+    constructor(paramShipX, paramShipY) {
         this.img = new Image()
         this.img.src = "../images/shoot.png"
-        this.x = canvas.width/2
-        this.y = canvas.height/2
+        this.x = paramShipX
+        this.y = paramShipY
         this.height = 10
-        this.width = 10
-        this.shootSpeed = 1
+        this.width = 20
+        this.shootSpeed = 5
+        this.shootCorrect = 25
     }
 
     drawShoot = () => {
-        
+        ctx.drawImage(this.img, this.x + this.shootCorrect, this.y, this.height, this.width)
+    }
+    shootMov = () => {
+        this.y = this.y - this.shootSpeed
     }
 }
