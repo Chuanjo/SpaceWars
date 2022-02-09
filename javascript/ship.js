@@ -29,24 +29,55 @@ class Ship {
     updatePositionShip = () => {
         this.x += this.speedX
         this.y += this.speedY
+
+        if (this.x > canvas.width - this.width - this.correction || this.x < 0 + this.correction) {
+            this.speedX = 0
+        } else if (this.y > canvas.height - this.height || this.y < 0) {
+            this.speedY = 0
+        }
     }
 
     movShip = (event) => {
-        if (event.key === "d" && this.x < canvas.width - this.width - this.correction ) {
-            this.x = this.x + this.speedShip
-            // this.speedX = 3
+        if (event.key === "d") {
+            // this.x = this.x + this.speedShip
+            this.speedX = 1
+            this.speedY = 0
         }
-        if (event.key === "a" && this.x > 0 + this.correction) {
-            this.x = this.x - this.speedShip
-            // this.speedY = -3
+
+        if (event.key === "d" && event.key === "w") {
+            // this.x = this.x + this.speedShip
+            this.speedX = 1
+            this.speedY = 1
         }
-        if (event.key === "s" && this.y < canvas.height - this.height) {
-            this.y = this.y + this.speedShip
-            // this.speedY = -3
+        if (event.key === "d" && event.key === "s") {
+            // this.x = this.x + this.speedShip
+            this.speedX = 1
+            this.speedY = -1
         }
-        if (event.key === "w" && this.y > 0) {
-            this.y = this.y - this.speedShip
-            // this.speedY = +3
+        if (event.key === "a") {
+            // this.x = this.x - this.speedShip
+            this.speedX = -1
+            this.speedY = 0
+        }
+        if (event.key === "a" && event.key === "w") {
+            // this.x = this.x - this.speedShip
+            this.speedX = -1
+            this.speedY = 1
+        }
+        if (event.key === "a" && event.key === "s") {
+            // this.x = this.x - this.speedShip
+            this.speedX = -1
+            this.speedY = -1
+        }
+        if (event.key === "s") {
+            // this.y = this.y + this.speedShip
+            this.speedY = 1
+            this.speedX = 0
+        }
+        if (event.key === "w") {
+            // this.y = this.y - this.speedShip
+            this.speedY = -1
+            this.speedX = 0
         } 
     
 

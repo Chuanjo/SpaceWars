@@ -7,6 +7,7 @@ class Game{
         this.enemyDist = 150
         this.enemy = new Enemy()
         this.isGameOn = true
+        this.score = new Score()
     }
 
     drawBackground = () => {
@@ -47,6 +48,7 @@ class Game{
                 this.enemyArr.splice(indexEnemy, 1)
                 const indexShoot = this.ship.shootArr.indexOf(shootParam)
                 this.ship.shootArr.splice(indexShoot, 1)
+                this.score.score+= 100
             }
     }
 
@@ -70,11 +72,15 @@ class Game{
         this.ship.shootArr.forEach( (eachShoot) => {
             eachShoot.shootMov()
         })
+
+        this.ship.updatePositionShip()
         
         // dibujar elementos
 
 
         this.drawBackground()
+
+        this.score.drawScore()
 
         this.ship.drawShip()
 
