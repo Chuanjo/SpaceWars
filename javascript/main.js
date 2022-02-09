@@ -33,4 +33,8 @@ document.addEventListener("keydown",(event) => {
     newGame.ship.shoot(event)
 } )
 
+document.addEventListener("keyup", (event) => {
+    newGame.ship.movAltShip(event)
+})
+
 

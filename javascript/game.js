@@ -9,16 +9,13 @@ class Game{
         this.isGameOn = true
         this.score = new Score()
     }
-
     drawBackground = () => {
         ctx.drawImage(this.bg,0,0,canvas.width,canvas.height)
         
     }
-
     cleanCanvas = () => {
         ctx.clearRect(this.bg,0,0,canvas.width,canvas.height)
     }
-
     spawnEnemy = () => {
         let lastEnemy = this.enemyArr[this.enemyArr.length - 1]
         if (lastEnemy.y > (0 + this.enemyDist)) {
@@ -27,7 +24,6 @@ class Game{
             this.enemyArr.push(new Enemy(randomX))
         }
     }
-
     checkShipEnemyCollision = (eachEnemyParam) => {
         if (this.ship.x < eachEnemyParam.x + eachEnemyParam.width &&
             this.ship.x + this.ship.width > eachEnemyParam.x &&
@@ -39,7 +35,6 @@ class Game{
                 gameOverScreen.style.display = "flex"  
             }
     }
-
     checkSootEnemyCollision = (eachEnemy, shootParam, indexEnemy) => {
         if (shootParam.x < eachEnemy.x + eachEnemy.width &&
             shootParam.x + shootParam.width > eachEnemy.x &&
@@ -51,7 +46,6 @@ class Game{
                 this.score.score+= 100
             }
     }
-
     gameLoop = () => {
         // Limpiar canvas
         this.cleanCanvas()
@@ -60,7 +54,7 @@ class Game{
         this.enemyArr.forEach( (eachEnemy) => {
             eachEnemy.enemyMov()
         })
-
+        
         this.spawnEnemy()
         this.enemyArr.forEach((eachEnemy, indexEnemy) => {
             this.checkShipEnemyCollision(eachEnemy)
@@ -74,6 +68,8 @@ class Game{
         })
 
         this.ship.updatePositionShip()
+
+        // this.ship.movAltShip()
         
         // dibujar elementos
 

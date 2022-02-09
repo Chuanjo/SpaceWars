@@ -1,7 +1,7 @@
 class Enemy {
     constructor(paramX) {
         this.img = new Image()
-        this.img.src = "./images/enemy.png"
+        this.img.src = "./images/tie.png"
         this.x = paramX
         this.y = - 30
         this.height = 60

@@ -7,10 +7,7 @@ class Score {
         this.y = 0
         this.width = 100
         this.height = 100
-        
-        
       }
-    
       drawScore = () => {
         ctx.font = "30px Arial "
         ctx.fillStyle= "LightBlue"
