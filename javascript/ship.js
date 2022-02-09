@@ -2,7 +2,7 @@ class Ship {
     constructor() {
         // propiedades
         this.img = new Image()
-        this.img.src = "./images/nave.png"
+        this.img.src = "./images/xwing2.png"
         this.speedX = 0
         this.speedY = 0
         this.x = canvas.width / 2 - 30
@@ -23,7 +23,12 @@ class Ship {
             const newShoot = new Shoot(this.x, this.y)
             this.shootArr.push(newShoot)
         }
-        
+
+    }
+
+    updatePositionShip = () => {
+        this.x += this.speedX
+        this.y += this.speedY
     }
 
     movShip = (event) => {
@@ -37,13 +42,26 @@ class Ship {
         }
         if (event.key === "s" && this.y < canvas.height - this.height) {
             this.y = this.y + this.speedShip
-            // this.speedY = 3
+            // this.speedY = -3
         }
         if (event.key === "w" && this.y > 0) {
             this.y = this.y - this.speedShip
-            // this.speedY = -3
+            // this.speedY = +3
         } 
+    
+
+        // if(event.key === 'd'){
+        //     this.speedX= 3
+        // }else if(event.key === 'ArrowLeft'){
+        //     this.speedX = -3
+        // }
+
+        // if(event.key === 'ArrowRight' || event.key === 'ArrowLeft'){
+        //     this.speedX = 0
+        // }
     }
+    
+
     
 
 }

@@ -1,7 +1,7 @@
 class Shoot {
     constructor(paramShipX, paramShipY) {
         this.img = new Image()
-        this.img.src = "../images/shoot.png"
+        this.img.src = "./images/shoot.png"
         this.x = paramShipX
         this.y = paramShipY
         this.height = 10

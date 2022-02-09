@@ -1,7 +1,7 @@
 class Game{
     constructor() {
         this.bg = new Image()
-        this.bg.src = "../images/fondocanvas.png"
+        this.bg.src = "./images/fondocanvas.png"
         this.ship = new Ship()
         this.enemyArr = [new Enemy()]
         this.enemyDist = 150

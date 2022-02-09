@@ -31,7 +31,6 @@ playAgainButton.addEventListener("click", startGame)
 document.addEventListener("keydown",(event) => {
     newGame.ship.movShip(event)
     newGame.ship.shoot(event)
-    
 } )
 
 
