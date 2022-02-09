@@ -1,18 +1,19 @@
 class Game{
     constructor() {
-        this.bg = new Image()
-        this.bg.src = "./images/fondocanvas.png"
+        // this.bg = new Image()
+        // this.bg.src = "./images/fondocanvas.png"
         this.ship = new Ship()
         this.enemyArr = [new Enemy()]
         this.enemyDist = 150
         this.enemy = new Enemy()
         this.isGameOn = true
         this.score = new Score()
+        this.background = new Background()
     }
-    drawBackground = () => {
-        ctx.drawImage(this.bg,0,0,canvas.width,canvas.height)
+    // drawBackground = () => {
+    //     ctx.drawImage(this.bg,0,0,canvas.width,canvas.height)
         
-    }
+    // }
     cleanCanvas = () => {
         ctx.clearRect(this.bg,0,0,canvas.width,canvas.height)
     }
@@ -69,12 +70,15 @@ class Game{
 
         this.ship.updatePositionShip()
 
+        this.background.backgroundMov()
+
         // this.ship.movAltShip()
         
         // dibujar elementos
 
+        
 
-        this.drawBackground()
+        this.background.drawBackground()
 
         this.score.drawScore()
 

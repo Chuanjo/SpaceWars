@@ -43,6 +43,13 @@ body {
   display: none;
 }
 
+.finalscore {
+  font-size: 50px;
+  font-family:monospace;
+  font-style: italic;
+  color: rgb(239, 192, 74);
+}
+
 
 
 /* #my-canvas, #start-screen {

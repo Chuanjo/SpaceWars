@@ -40,16 +40,16 @@ class Ship {
         }
     }
     movShip = (event) => {
-        if (event.key === "d") {
+        if (event.key === "d" && this.x < canvas.width - this.width - this.correction) {
             this.speedX = 1
         }
-        if (event.key === "a") {
+        if (event.key === "a"  && this.x > 0 + this.width + this.correction) {
             this.speedX = -1
         }
-        if (event.key === "s") {
+        if (event.key === "s" && this.y < canvas.height - this.height) {
             this.speedY = 1
         }
-        if (event.key === "w") {
+        if (event.key === "w" && this.y > 0) {
             this.speedY = -1
         } 
     }
