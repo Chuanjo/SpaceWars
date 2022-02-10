@@ -28,13 +28,20 @@ class Game{
             this.ship.y < eachEnemyParam.y + eachEnemyParam.height &&
             this.ship.height + this.ship.y > eachEnemyParam.y) {
 
-                this.isGameOn = false
-                canvas.style.display = "none"
-                gameOverScreen.style.display = "flex"
-                yourScoreDom.innerText =  this.score.score
+                const eachEnemyParamIndex = this.enemyArr.indexOf(eachEnemyParam)
+
+                this.enemyArr.splice(eachEnemyParamIndex, 1)
+
+                this.ship.lives -= 1
+
+                if (this.ship.lives === 0 ) {
+                    this.isGameOn = false
+                    canvas.style.display = "none"
+                    gameOverScreen.style.display = "flex"
+                    yourScoreDom.innerText =  this.score.score
+                } 
             }
     }
-
     checkSootEnemyCollision = (eachEnemy, shootParam, indexEnemy) => {
         if (shootParam.x < eachEnemy.x + eachEnemy.width &&
             shootParam.x + shootParam.width > eachEnemy.x &&
@@ -46,7 +53,11 @@ class Game{
                 this.score.score+= 100
             }
     }
-
+    drawLives = () => {
+        ctx.font = "30px monospace"
+        ctx.fillStyle= "LightBlue"
+        ctx.fillText(`LIVES: ${this.ship.lives}`, 650, 30)
+}
     gameLoop = () => {
 
         this.cleanCanvas()
@@ -74,6 +85,8 @@ class Game{
         this.background.drawBackground()
 
         this.score.drawScore()
+
+        this.drawLives()
 
         this.ship.drawShip()
 

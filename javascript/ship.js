@@ -10,6 +10,7 @@ class Ship {
         this.width = 60
         this.correction = 10
         this.shootArr = []
+        this.lives = 3
     }
     drawShip = () => {
         ctx.drawImage(this.img,this.x,this.y,this.width,this.height)
