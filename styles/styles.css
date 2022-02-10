@@ -12,12 +12,22 @@ body {
   background-color: darkgray;
 }
 
-#start-btn, #replay-btn {
+#start-btn {
   background-color: gray;
   color: white;
   padding: 5px;
   font-size: 20px;
   margin-top: 20px;
+  border-radius: 5px; 
+  flex: center;
+}
+
+#replay-btn {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 70px;
   border-radius: 5px; 
   flex: center;
 }
@@ -43,14 +53,21 @@ body {
   display: none;
 }
 
-.finalscore {
+.yourscore {
+  margin-top: 50px;
   font-size: 50px;
   font-family:monospace;
   font-style: italic;
   color: rgb(239, 192, 74);
 }
 
-
+.finalscore {
+  margin-top: 5px;
+  font-size: 50px;
+  font-family:monospace;
+  font-style: italic;
+  color: rgb(239, 192, 74);
+}
 
 /* #my-canvas, #start-screen {
     display: flex;

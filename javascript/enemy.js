@@ -6,7 +6,7 @@ class Enemy {
         this.y = - 30
         this.height = 60
         this.width = 60
-        this.speedEnemy = 1
+        this.speedEnemy = 4
         this.correction = 10
     }
     drawEnemy = () => {

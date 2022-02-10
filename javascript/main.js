@@ -4,8 +4,8 @@ let gameOverScreen = document.querySelector("#gameover-screen")
 let startScreen = document.querySelector("#start-screen")
 let canvas = document.querySelector("#my-canvas")
 let ctx = canvas.getContext("2d")
+let yourScoreDom = document.querySelector("#accumulator")
 let newGame
-
 
 // * STATE MANAGEMENT FUNCTIONS
 
@@ -17,8 +17,6 @@ const startGame = () => {
     newGame = new Game()
     newGame.gameLoop()
 }
-
-
 
 // * ADD EVENT LISTENERS
 
@@ -36,5 +34,3 @@ document.addEventListener("keydown",(event) => {
 document.addEventListener("keyup", (event) => {
     newGame.ship.movAltShip(event)
 })
-
-

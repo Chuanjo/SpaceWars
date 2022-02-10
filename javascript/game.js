@@ -1,7 +1,5 @@
 class Game{
     constructor() {
-        // this.bg = new Image()
-        // this.bg.src = "./images/fondocanvas.png"
         this.ship = new Ship()
         this.enemyArr = [new Enemy()]
         this.enemyDist = 150
@@ -10,10 +8,9 @@ class Game{
         this.score = new Score()
         this.background = new Background()
     }
-    // drawBackground = () => {
-    //     ctx.drawImage(this.bg,0,0,canvas.width,canvas.height)
-        
-    // }
+
+// * METHODS
+
     cleanCanvas = () => {
         ctx.clearRect(this.bg,0,0,canvas.width,canvas.height)
     }
@@ -33,9 +30,11 @@ class Game{
 
                 this.isGameOn = false
                 canvas.style.display = "none"
-                gameOverScreen.style.display = "flex"  
+                gameOverScreen.style.display = "flex"
+                yourScoreDom.innerText =  this.score.score
             }
     }
+
     checkSootEnemyCollision = (eachEnemy, shootParam, indexEnemy) => {
         if (shootParam.x < eachEnemy.x + eachEnemy.width &&
             shootParam.x + shootParam.width > eachEnemy.x &&
@@ -47,15 +46,16 @@ class Game{
                 this.score.score+= 100
             }
     }
+
     gameLoop = () => {
-        // Limpiar canvas
+
         this.cleanCanvas()
 
-        // mover elementos
+    // * MOVEMENT
+
         this.enemyArr.forEach( (eachEnemy) => {
             eachEnemy.enemyMov()
         })
-        
         this.spawnEnemy()
         this.enemyArr.forEach((eachEnemy, indexEnemy) => {
             this.checkShipEnemyCollision(eachEnemy)
@@ -63,20 +63,13 @@ class Game{
                 this.checkSootEnemyCollision(eachEnemy,shootParam, indexEnemy)
             })
         })
-
         this.ship.shootArr.forEach( (eachShoot) => {
             eachShoot.shootMov()
         })
-
         this.ship.updatePositionShip()
-
         this.background.backgroundMov()
-
-        // this.ship.movAltShip()
         
-        // dibujar elementos
-
-        
+    // * DRAWN
 
         this.background.drawBackground()
 
@@ -93,7 +86,7 @@ class Game{
         })
         
         
-        // recursion animacion
+    // * RECURSION 
 
         if (this.isGameOn === true) {
             requestAnimationFrame(this.gameLoop)

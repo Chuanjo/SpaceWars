@@ -1,6 +1,5 @@
 class Ship {
     constructor() {
-        // propiedades
         this.img = new Image()
         this.img.src = "./images/xwing2.png"
         this.speedX = 0
@@ -9,11 +8,9 @@ class Ship {
         this.y = canvas.height - 100
         this.height = 60
         this.width = 60
-        this.speedShip = 20
         this.correction = 10
         this.shootArr = []
     }
-    // metodos
     drawShip = () => {
         ctx.drawImage(this.img,this.x,this.y,this.width,this.height)
     }
@@ -41,16 +38,16 @@ class Ship {
     }
     movShip = (event) => {
         if (event.key === "d" && this.x < canvas.width - this.width - this.correction) {
-            this.speedX = 1
+            this.speedX = 5
         }
         if (event.key === "a"  && this.x > 0 + this.width + this.correction) {
-            this.speedX = -1
+            this.speedX = -5
         }
         if (event.key === "s" && this.y < canvas.height - this.height) {
-            this.speedY = 1
+            this.speedY = 5
         }
         if (event.key === "w" && this.y > 0) {
-            this.speedY = -1
+            this.speedY = -5
         } 
     }
 }

@@ -8,7 +8,6 @@ class Background {
         this.bg2 = new Image()
         this.bg2.src = "./images/fondocanvas.png"
     }
-
     backgroundMov = () => {
         if (this.y1 >= 600) {
             this.y1 = -600
@@ -16,13 +15,11 @@ class Background {
         if (this.y2 >= 600) {
             this.y2 = - 600
         }
-        this.y1 += 0.2
-        this.y2 += 0.2
+        this.y1 += 0.8
+        this.y2 += 0.8
     }
-
     drawBackground = () => {
         ctx.drawImage(this.bg1,0,this.y1,canvas.width,canvas.height)
         ctx.drawImage(this.bg2,0,this.y2,canvas.width,canvas.height)
     }
-
 }
