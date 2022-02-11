@@ -9,7 +9,7 @@ let newGame
 const audio1 = new Audio()
 audio1.src = "./sounds/startplaymusic.mp3"
 audio1.volume = 0.05
-audio1.loop
+audio1.loop = true
 
 const audio2 = new Audio()
 audio2.src = "./sounds/starwarsintro.mp3"
@@ -29,7 +29,7 @@ const startGame = () => {
     startScreen.style.display = "none"
     gameOverScreen.style.display = "none"
     canvas.style.display = "flex"
-    audio1.play().loop
+    audio1.play()
     audio2.pause()
     newGame = new Game()
     newGame.gameLoop()
