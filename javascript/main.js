@@ -6,6 +6,22 @@ let canvas = document.querySelector("#my-canvas")
 let ctx = canvas.getContext("2d")
 let yourScoreDom = document.querySelector("#accumulator")
 let newGame
+const audio1 = new Audio()
+audio1.src = "./sounds/startplaymusic.mp3"
+audio1.volume = 0.05
+audio1.loop
+
+const audio2 = new Audio()
+audio2.src = "./sounds/starwarsintro.mp3"
+audio2.load()
+audio2.volume = 0.05
+audio2.play()
+
+const audio3 = new Audio()
+audio3.load()
+audio3.src = "./sounds/sonidolaser.mp3"
+
+
 
 // * STATE MANAGEMENT FUNCTIONS
 
@@ -13,7 +29,8 @@ const startGame = () => {
     startScreen.style.display = "none"
     gameOverScreen.style.display = "none"
     canvas.style.display = "flex"
-    
+    audio1.play().loop
+    audio2.pause()
     newGame = new Game()
     newGame.gameLoop()
 }

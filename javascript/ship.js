@@ -19,6 +19,7 @@ class Ship {
         if (event.key === " "){
             const newShoot = new Shoot(this.x, this.y)
             this.shootArr.push(newShoot)
+            // audio3.play()
         }
     }
     updatePositionShip = () => {
