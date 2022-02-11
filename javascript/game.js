@@ -56,6 +56,7 @@ class Game {
                 if (this.ship.lives === 0 ) {
                     this.isGameOn = false
                     audio1.pause()
+                    audio4.play()
                     canvas.style.display = "none"
                     gameOverScreen.style.display = "flex"
                     yourScoreDom.innerText =  this.score.score

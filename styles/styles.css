@@ -15,8 +15,8 @@ body {
 #start-btn {
   background-color: gray;
   color: rgb(239, 192, 74);
-  padding: 10px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 30px;
   margin-top: 20px;
   border-radius: 5px; 
   flex: center;
@@ -24,10 +24,10 @@ body {
 }
 
 #replay-btn {
-  background-color: gray;
+  background-color:rgb(116, 116, 116);
   color: rgb(239, 192, 74);
-  padding: 5px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 30px;
   margin-top: 70px;
   border-radius: 5px; 
   flex: center;
@@ -39,7 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 0px;
 }
 
 #my-canvas {
@@ -48,11 +48,18 @@ body {
 }
 
 .paddingTop {
-  padding-top: 200px;
+  padding-top: 150px;
 }
 
 #gameover-screen {
   display: none;
+}
+
+.instructions {
+  font-size: 30px;
+  font-family:monospace;
+  font-style: italic;
+  color: rgb(239, 192, 74);
 }
 
 .yourscore {

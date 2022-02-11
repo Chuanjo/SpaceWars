@@ -21,6 +21,7 @@ The game consists of eliminating as many enemies as possible to increase the sco
 - Add final bosses.
 - Insert different levels.
 - Implement animations for the ship and the enemies.
+- Upgrade sounds an music.
 
 ## Data Structure
 

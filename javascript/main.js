@@ -8,6 +8,7 @@ let yourScoreDom = document.querySelector("#accumulator")
 let newGame
 const audio1 = new Audio()
 audio1.src = "./sounds/startplaymusic.mp3"
+audio1.load()
 audio1.volume = 0.05
 audio1.loop = true
 
@@ -21,6 +22,10 @@ const audio3 = new Audio()
 audio3.load()
 audio3.src = "./sounds/sonidolaser.mp3"
 
+const audio4 = new Audio()
+audio4.src = "./sounds/marchaimperial.mp3"
+audio4.load()
+audio4.volume = 0.07
 
 
 // * STATE MANAGEMENT FUNCTIONS
@@ -31,6 +36,7 @@ const startGame = () => {
     canvas.style.display = "flex"
     audio1.play()
     audio2.pause()
+    audio4.pause()
     newGame = new Game()
     newGame.gameLoop()
 }
