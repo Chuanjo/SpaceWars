@@ -1,21 +1,55 @@
-# SpaceWars
+# Space Wars
 
-Project's name
-Space Wars
+## Description
 
-Description
-La nave se va moviendo por la pantalla y van viniendo enemigos.
+The game consists of eliminating as many enemies as possible to increase the score. The ship has three lives that you can see at the top right corner. When the enemies has been destroyed your score go up in the top left corner. You can recover one live (they can't be more than three) if you catch a power up that drop ramdomly from the top. The game ends after tou loose the last lives. You can see your final score in the game over screen.
 
-MVP
-La nave se tiene que mover en el eje X y en el. eje Y, mientras los enemigos caen. el objetivo es destruir con disparos a los enemigos e ir sumando puntos. El juego termina cuando se colisione con cualquier nave o se alcance unos puntos determinados.
+## MVP
 
-Backlog
-El coche pueda pasar nieveles (de tiempo).
-El juego acaba al terminar el tiempo.
-Al finalizar el juego haga recuento de kilometros.
-Con boton de inicio el juego arranque con un modelo diferente de coche.
-Data structure
+- The ship can moves vertically and horizontally.
+- The ship shoots vertically.
+- Enemies appear randomly from the top of the screen.
+- Collisions between ship - enemies, shoot - enemies and ship - powers up.
+- Power up's for recovery lives ramdomly drops from the top.
+- Increasing the speed of enemies.
+- Ship have three lives.
 
-html
+## Backlog
 
-States y States Transitions
+- Add more kinds of enemies whith different score.
+- More types of power up's.
+- Add final bosses.
+- Insert different levels.
+- Implement animations for the ship and the enemies.
+
+## Data Structure
+
+- main.js
+- game.js
+- ship.js
+- enemy.js 
+- shoot.js
+- score.js
+- liveup.js
+- background.js
+
+## States y States Transitions
+Definition of the different states and their transition (transition functions)
+
+- start-screen
+- game-screen
+- gameover-screen
+
+## Links
+
+### Git
+URls for the project repo, deploy and my Github profile
+[Link Github Profile](https://github.com/Chuanjo)
+[Link Repo](https://github.com/Chuanjo/SpaceWars)
+[Link Deploy](https://chuanjo.github.io/SpaceWars/)
+
+## Additional Links
+
+### Slides
+URls for the project presentation (slides)
+[Link Slides.com](https://docs.google.com/presentation/d/1dNr8wmUfk0u38IJLPEKEYKXyZMV9AYf2J9a66Gi6MG0/edit?usp=sharing)
