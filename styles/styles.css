@@ -17,7 +17,7 @@ body {
   color: rgb(239, 192, 74);
   padding: 15px;
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: 70px;
   border-radius: 5px; 
   flex: center;
   border-radius:15px;
@@ -44,7 +44,10 @@ body {
 
 #my-canvas {
   display: none;
+}
 
+#logo-inicio {
+  margin: 80px;
 }
 
 .paddingTop {
